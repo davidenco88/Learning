@@ -1,0 +1,27 @@
+{
+  "name": "api_rest",
+  "version": "1.0.0",
+  "description": "Ejemplo de una API rest con metodos nativos de node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidenco88/Learning.git"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "Node",
+    "http",
+    "web",
+    "server"
+  ],
+  "author": "David Sarria - DavidencoDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidenco88/Learning/issues"
+  },
+  "homepage": "https://github.com/davidenco88/Learning#readme"
+}
