@@ -1,0 +1,25 @@
+{
+  "name": "web_server_http",
+  "version": "1.0.0",
+  "description": "Ejemplo creación web server sencillo sin dependencias",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidenco88/Learning.git"
+  },
+  "keywords": [
+    "Node",
+    "web",
+    "server",
+    "http"
+  ],
+  "author": "David Sarria - DavidencoDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidenco88/Learning/issues"
+  },
+  "homepage": "https://github.com/davidenco88/Learning#readme"
+}
