@@ -1,0 +1,34 @@
+### Solicitud de funcionamiento de la API
+GET http://localhost:3000/
+
+### Obtener listado de Pokemosns
+GET http://localhost:3000/pokemons
+
+### Crear un listado aparte.
+POST http://localhost:3000/new
+Content-Type: application/json
+
+{
+  "results": [
+    {
+      "name": "bulbasaur",
+      "url": "https://pokeapi.co/api/v2/pokemon/1/"
+    },
+    {
+    "name": "ivysaur",
+    "url": "https://pokeapi.co/api/v2/pokemon/2/"
+    },
+    {
+    "name": "venusaur",
+    "url": "https://pokeapi.co/api/v2/pokemon/3/"
+    },
+    {
+    "name": "charmander",
+    "url": "https://pokeapi.co/api/v2/pokemon/4/"
+    },
+    {
+    "name": "charmeleon",
+    "url": "https://pokeapi.co/api/v2/pokemon/5/"
+    }
+  ]
+}
