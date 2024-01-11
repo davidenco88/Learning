@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/davidenco88/Learning/issues"
   },
-  "homepage": "https://github.com/davidenco88/Learning#readme"
+  "homepage": "https://github.com/davidenco88/Learning#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
