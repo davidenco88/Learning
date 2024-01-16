@@ -1,0 +1,26 @@
+### Solicitud de funcionamiento de la API
+GET http://localhost:3000/
+
+### Obtener listado de encuestas
+GET http://localhost:3000/surveys
+
+### Crear una encuesta
+POST http://localhost:3000/surveys
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Survey 1"
+}
+
+### Actualizar una encuesta
+PUT http://localhost:3000/surveys/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Other survey"
+}
+
+### Eliminar una encuesta
+DELETE http://localhost:3000/surveys/1
