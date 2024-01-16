@@ -14,7 +14,6 @@ appRouter.get("/surveys", (req, res) => {
 
 appRouter.post("/surveys", (req, res) => {
   const survey = req.body;
-  console.log(survey);
   surveys.push(survey);
   res.status(201).json(survey);
 });
