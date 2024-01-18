@@ -1,4 +1,10 @@
-import { getAll, getById, createdItem } from "../models/movies.js";
+import {
+  getAll,
+  getById,
+  createdItem,
+  updateItem,
+  deleteItem,
+} from "../models/movies.js";
 
 export async function getAllMovies(req, res) {
   const movies = await getAll();
@@ -18,9 +24,13 @@ export async function createdMovie(req, res) {
 }
 
 export async function updateMovie(req, res) {
-  res.status(200).send("Updated Movie");
+  const data = req.body;
+  const movie = await updateItem(data);
+  res.status(200).json(movie);
 }
 
 export async function deleteMovie(req, res) {
-  res.status(200).send("Deleted Movie");
+  const { id } = req.params;
+  await deleteItem(id);
+  res.status(200).send("Movie was successfully deleted");
 }
