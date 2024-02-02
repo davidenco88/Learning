@@ -1,6 +1,7 @@
 import { GoogleLogin } from "@react-oauth/google";
 import { Dialog, Box, Typography, List, ListItem, styled } from "@mui/material";
 import qrImage from "../../assets/qr_code.png";
+import { jwtDecode } from "jwt-decode";
 
 const dialogStyle = {
   height: "96%",
@@ -46,8 +47,17 @@ const StyledList = styled(List)`
 `;
 
 function LoginDialog() {
+  function onLoginSuccess(res) {
+    const credential = jwtDecode(res.credential);
+    console.log(credential);
+  }
+
+  function onLoginError(res) {
+    console.log("Login failed ", res);
+  }
+
   return (
-    <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
+    <Dialog open={true} PaperProps={{ sx: dialogStyle }} hideBackdrop={true}>
       <Component>
         <Container>
           <Title>Use WhatsApp on your computer</Title>
@@ -61,9 +71,17 @@ function LoginDialog() {
             </ListItem>
           </StyledList>
         </Container>
-        <Box>
+        <Box style={{ position: "relative" }}>
           <QRCode src={qrImage} alt="qr_code" />
-          <GoogleLogin />
+          <Box
+            style={{
+              position: "absolute",
+              top: "50%",
+              transform: "translateX(25%) translateY(-25%)",
+            }}
+          >
+            <GoogleLogin onSuccess={onLoginSuccess} onError={onLoginError} />
+          </Box>
         </Box>
       </Component>
     </Dialog>
