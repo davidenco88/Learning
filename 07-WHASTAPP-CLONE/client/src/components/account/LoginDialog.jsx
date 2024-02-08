@@ -1,7 +1,9 @@
+import { useContext } from "react";
+import { AccountContext } from "../../context/AccountProvider";
+import { jwtDecode } from "jwt-decode";
 import { GoogleLogin } from "@react-oauth/google";
 import { Dialog, Box, Typography, List, ListItem, styled } from "@mui/material";
 import qrImage from "../../assets/qr_code.png";
-import { jwtDecode } from "jwt-decode";
 
 const dialogStyle = {
   height: "96%",
@@ -47,9 +49,11 @@ const StyledList = styled(List)`
 `;
 
 function LoginDialog() {
+  const { setAccount } = useContext(AccountContext);
+
   function onLoginSuccess(res) {
     const credential = jwtDecode(res.credential);
-    console.log(credential);
+    setAccount(credential);
   }
 
   function onLoginError(res) {
